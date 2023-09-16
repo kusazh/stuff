@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>kusai</title>
+    <style>
+      body {
+        font-family: "Gill Sans", "Gill Sans MT", sans-serif;
+        font-size: 12px;
+        margin: 0;
+      }
+
+      h1, h2 {
+        font-weight: normal;
+      }
+
+      h1 {
+        letter-spacing: 0.5em;
+        margin-bottom: 1em;
+      }
+
+      input {
+        display: none;
+      }
+
+      input:checked + label .item {
+        border-color: black;
+      }
+
+      p {
+        color: gray;
+      }
+
+      a {
+        color: black;
+        text-decoration: none;
+      }
+
+      .layout {
+        display: flex;
+        margin: 0.5em;
+      }
+
+      .sidebar {
+        position: fixed;
+        width: 16em;
+      }
+
+      .main {
+        max-width: 40em;
+        line-height: 1.25;
+        margin: 1em 1em 1em 19em;
+      }
+
+      .desc {
+        display: none;
+      }
+
+      .desc p {
+        font-size: 1.25em;
+      }
+
+      .desc img {
+        width: 100%;
+      }
+
+      .item {
+        margin: 1em;
+        border-bottom: 0.1px solid lightgray;
+        line-height: 0.75;
+      }
+
+      .item:hover {
+        border-color: black;
+        cursor: pointer;
+      }
+
+      .logo {
+        display: flex;
+        margin: 0 0 1em 1em;
+        white-space: nowrap;
+      }
+
+      .ï {
+        display: inline-block;
+        text-indent: 0.375em;
+      }
+
+      .circle {
+        width: 2em;
+        height: 3.2em;
+        margin: 1.1em 0 0 -2.4em;
+        border: 0.2em solid black;
+        border-radius: 100%;
+        animation: flip 2s infinite ease-in-out;
+      }
+      
+      @keyframes flip {
+        to {
+          transform: rotateY(180deg);
+        }
+      }
+
+      @media screen and (max-width: 580px) {
+        .sidebar {
+          width: 11em;
+        }
+
+        .main {
+          margin: 1em 0.5em 1em 11.25em;
+        }
+
+        .desc {
+          word-wrap: break-word;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="layout">
+      <div class="sidebar">
+        <div class="logo">
+          <h1>kusa<div class="ï">ï</div></h1>
+          <div class="circle"></div>
+        </div>
+        <input type="checkbox" id="1" onclick="show(this)" />
+        <label for="1">
+          <div class="item">
+            <h2>So-so</h2>
+            <p>2023</p>
+          </div>
+        </label>
+        <input type="checkbox" id="2" onclick="show(this)" />
+        <label for="2">
+          <div class="item">
+            <h2>Chloe</h2>
+            <p>2021</p>
+          </div>
+        </label>
+        <input type="checkbox" id="3" onclick="show(this)" />
+        <label for="3">
+          <div class="item">
+            <h2>Kusa</h2>
+            <p>2020</p>
+          </div>
+        </label>
+        <input type="checkbox" id="4" onclick="show(this)" />
+        <label for="4">
+          <div class="item">
+            <h2>Encore</h2>
+            <p>2017</p>
+          </div>
+        </label>
+        <input type="checkbox" id="5" onclick="show(this)" />
+        <label for="5">
+          <div class="item">
+            <h2>Capsule</h2>
+            <p>2016</p>
+          </div>
+        </label>
+        <input type="checkbox" id="6" onclick="show(this)" />
+        <label for="6">
+          <div class="item">
+            <h2>Receipto:</h2>
+            <p>2016</p>
+          </div>
+        </label>
+      </div>
+      <div class="main" id="main">
+        <div class="desc">
+          <h2>test</h2>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry"s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+        <div class="desc">
+          <h2>test2</h2>
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry"s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+        <div class="desc">
+          <img src="images/cueb.jpg" alt="CUEB" />
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          </p>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          </p>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          </p>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          </p>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+          </p>
+        </div>
+        <div class="desc">
+        </div>
+        <div class="desc">
+        </div>
+        <div class="desc">
+        </div>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    function show(e) {
+      const parent = e.parentElement;
+      const index = parseInt(e.id);
+      const main = document.getElementById("main");
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+      for (let i = 0; i < main.children.length; i++) {
+        if (i === index - 1) {
+          main.children[i].style.display = "block";
+          checkboxes[i].checked = true;
+        } else {
+          main.children[i].style.display = "none";
+          checkboxes[i].style.cssText = "";
+          checkboxes[i].checked = false;
+        }
+      }
+    }
+  </script>
+</html>
