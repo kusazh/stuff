@@ -78,7 +78,7 @@
 
       .main {
         position: absolute;
-        margin: 1em 1em 1em 19em;
+        margin: 1em 1em 1em max(18em, 25vw);
         max-width: max(50em, 40vw);
         line-height: 1.25;
       }
@@ -146,14 +146,15 @@
 
         .item {
           width: 6em;
+          margin: 1em 0.5em 1em 0.5em;
         }
 
         .checkboxes {
           display: flex;
           flex-direction: row;
-          margin: 0.5em 0 0 12em;
-          width: calc(100vw - 13.5em);
-          overflow-x: auto;
+          margin: 0.25em 0 0 12.5em;
+          width: calc(100vw - 14em);
+          overflow-y: auto;
           -ms-overflow-style: none;
           scrollbar-width: none;
         }
@@ -163,9 +164,8 @@
         }
 
         .main {
-          position: absolute;
           z-index: -1;
-          margin: 7em 1em 0 1em;
+          margin: 7em 1.5em 0 1.5em;
         }
 
         .desc {
@@ -277,17 +277,8 @@
         </section>
       </div>
       <div class="desc">
-        <h2>test2</h2>
         <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry"s standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specimen book. It has survived not only
-          five centuries, but also the leap into electronic typesetting,
-          remaining essentially unchanged. It was popularised in the 1960s with
-          the release of Letraset sheets containing Lorem Ipsum passages, and
-          more recently with desktop publishing software like Aldus PageMaker
-          including versions of Lorem Ipsum.
+          WIP
         </p>
       </div>
       <div class="desc">
@@ -364,6 +355,11 @@
         if (i === index - 1) {
           main.children[i].style.display = "block";
           checkboxes[i].checked = true;
+          checkboxes[i].nextElementSibling.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "start",
+          });
         } else {
           main.children[i].style.display = "none";
           checkboxes[i].style.cssText = "";
