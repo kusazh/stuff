@@ -6,9 +6,9 @@
     <title>kusai</title>
     <style>
       body {
-        font-family: "Gill Sans", "Gill Sans MT", sans-serif;
-        font-size: 12px;
         margin: 0;
+        font-family: "Gill Sans", "Gill Sans MT", "Gill Sans Nova", sans-serif;
+        font-size: 12px;
       }
 
       h1,
@@ -17,8 +17,8 @@
       }
 
       h1 {
-        letter-spacing: 0.5em;
         margin-bottom: 1em;
+        letter-spacing: 0.5em;
       }
 
       input {
@@ -38,32 +38,23 @@
       }
 
       a {
-        color: black;
         text-decoration: none;
+        color: black;
       }
 
       a:hover {
         text-decoration: underline;
       }
 
-      /* a::after {
-        content: " ↗︎";
-        font-size: 0.8em;
-      } */
-
-      .layout {
-        display: flex;
-        margin: 0.5em;
-      }
-
       .sidebar {
         position: fixed;
+        margin-left: 0.5em;
         width: 16em;
       }
 
       .logo {
         display: flex;
-        margin: 0 0 1em 1em;
+        margin: 0.5em 0 1em 1em;
       }
 
       .ï {
@@ -71,11 +62,11 @@
       }
 
       .circle {
-        width: 2em;
-        height: 3.2em;
         margin: 1.1em 0 0 -2.4em;
         border: 0.2em solid black;
         border-radius: 100%;
+        width: 2em;
+        height: 3.2em;
         animation: flip 2s infinite ease-in-out;
       }
 
@@ -86,9 +77,10 @@
       }
 
       .main {
+        position: absolute;
+        margin: 1em 1em 1em 19em;
         max-width: max(50em, 40vw);
         line-height: 1.25;
-        margin: 1em 1em 1em 19em;
       }
 
       .desc {
@@ -100,8 +92,8 @@
       }
 
       .desc img {
-        max-width: 40em;
         width: 100%;
+        max-width: 40em;
       }
 
       .cjk {
@@ -121,30 +113,87 @@
 
       @media screen and (max-width: 580px) {
         .sidebar {
-          width: 11em;
+          margin: 0;
+          background: linear-gradient(
+            to bottom,
+            rgb(99.608% 99.608% 99.608%) 0%,
+            rgb(99.612% 99.612% 99.612% / 0.9951963201008076) 6.25%,
+            rgb(99.623% 99.623% 99.623% / 0.9809698831278217) 12.5%,
+            rgb(99.641% 99.641% 99.641% / 0.9578674030756363) 18.75%,
+            rgb(99.665% 99.665% 99.665% / 0.9267766952966369) 25%,
+            rgb(99.695% 99.695% 99.695% / 0.8888925582549005) 31.25%,
+            rgb(99.729% 99.729% 99.729% / 0.8456708580912724) 37.5%,
+            rgb(99.766% 99.766% 99.766% / 0.7987725805040321) 43.75%,
+            rgb(99.804% 99.804% 99.804% / 0.75) 50%,
+            rgb(99.842% 99.842% 99.842% / 0.701227419495968) 56.25%,
+            rgb(99.879% 99.879% 99.879% / 0.6543291419087276) 62.5%,
+            rgb(99.913% 99.913% 99.913% / 0.6111074417450995) 68.75%,
+            rgb(99.943% 99.943% 99.943% / 0.5732233047033631) 75%,
+            rgb(99.967% 99.967% 99.967% / 0.5421325969243637) 81.25%,
+            rgb(99.985% 99.985% 99.985% / 0.5190301168721783) 87.5%,
+            rgb(99.996% 99.996% 99.996% / 0.5048036798991924) 93.75%,
+            rgb(100% 100% 100% / 0.5) 100%
+          );
+          width: 100%;
+          backdrop-filter: blur(10px);
+          -webkit-backdrop-filter: blur(10px);
+        }
+
+        .logo {
+          position: fixed;
+          margin: 0.5em 0 1em 1.5em;
+        }
+
+        .item {
+          width: 6em;
+        }
+
+        .checkboxes {
+          display: flex;
+          flex-direction: row;
+          margin: 0.5em 0 0 12em;
+          width: calc(100vw - 13.5em);
+          overflow-x: auto;
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+
+        .checkboxes::-webkit-scrollbar {
+          display: none;
         }
 
         .main {
-          margin: 1em 0.5em 1em 11.25em;
+          position: absolute;
+          z-index: -1;
+          margin: 7em 1em 0 1em;
         }
 
         .desc {
-          word-wrap: break-word;
+          overflow-wrap: break-word;
+        }
+
+        .desc p {
+          margin-right: -0.25em;
+          font-size: 1.5em;
+        }
+
+        .desc img {
+          max-width: none;
         }
       }
     </style>
   </head>
 
   <body>
-    <div class="layout">
-      <div class="sidebar">
-        <div class="logo">
-          <h1>
-            kusa
-            <span class="ï">ï</span>
-          </h1>
-          <div class="circle"></div>
-        </div>
+    <div class="sidebar">
+      <div class="logo">
+        <h1>
+          kusa
+          <span class="ï">ï</span>
+        </h1>
+        <div class="circle"></div>
+      </div>
+      <div class="checkboxes">
         <input type="checkbox" id="1" onclick="show(this)" />
         <label for="1">
           <div class="item">
@@ -188,121 +237,120 @@
           </div>
         </label>
       </div>
-      <div class="main" id="main">
-        <div class="desc">
-          <section>
-            <img src="images/so-so.png" alt="So-so" />
-          </section>
-          <section>
-            <p>
-              <i>So-so</i> (<span class="cjk" lang="ja">草々</span>) is a poetry
-              game that can be run on Nintendo® Game Boy™. Each game map is a
-              poem.
-            </p>
-            <p>
-              It was developed using
-              <a href="https://www.gbstudio.dev" target="_blank">GB Studio</a>,
-              managed using Git, assisted with
-              <a
-                href="https://www.apple.com/newsroom/2022/12/apple-launches-freeform-a-powerful-new-app-designed-for-creative-collaboration/"
-                target="_blank"
-                >Freeform</a
-              >
-              for game flow management, and generated the required bitmap text
-              assets using Python. With the help of GB Studio’s built-in web
-              export feature, it can also be
-              <a href="https://kus.ai/so-so/" target="_blank"
-                >played in a browser</a
-              >.
-            </p>
-            <p>
-              The game and the web page used the 8x8 bitmap font
-              <a href="https://github.com/ItMarki/MisekiBitmap" target="_blank"
-                >MisekiBitmap</a
-              >
-              , ensuring that each Chinese character’s size conveniently matches
-              one tile. With this correspondence, events could be placed on
-              characters, triggering scene transitions when player move onto
-              them, creating a gameplay mechanic reminiscent of “hyperlink”.
-            </p>
-          </section>
-        </div>
-        <div class="desc">
-          <h2>test2</h2>
+    </div>
+    <div class="main" id="main">
+      <div class="desc">
+        <section>
+          <img src="images/so-so.png" alt="So-so" />
+        </section>
+        <section>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry"s standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
-          </p>
-        </div>
-        <div class="desc">
-          <img src="images/cueb.jpg" alt="CUEB" />
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry’s standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
+            <i>So-so</i> (<span class="cjk" lang="ja">草々</span>) is a poetry
+            game that can be run on Nintendo® Game Boy™. Each game map is a
+            poem.
           </p>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry’s standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
+            It was developed using
+            <a href="https://www.gbstudio.dev" target="_blank">GB Studio</a>,
+            managed using Git, assisted with
+            <a
+              href="https://www.apple.com/newsroom/2022/12/apple-launches-freeform-a-powerful-new-app-designed-for-creative-collaboration/"
+              target="_blank"
+              >Freeform</a
+            >
+            for game flow management, and generated the required bitmap text
+            assets using Python. With the help of GB Studio’s built-in web
+            export feature, it can also be
+            <a href="https://kus.ai/so-so/" target="_blank"
+              >played in a browser</a
+            >.
           </p>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry’s standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
+            The game and the web page used the 8x8 bitmap font
+            <a href="https://github.com/ItMarki/MisekiBitmap" target="_blank"
+              >MisekiBitmap</a
+            >, ensuring that each Chinese character’s size conveniently matches
+            one tile. With this correspondence, events could be placed on
+            characters, triggering scene transitions when player move onto them,
+            creating a gameplay mechanic reminiscent of “hyperlink”.
           </p>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry’s standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
-          </p>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry’s standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
-          </p>
-        </div>
-        <div class="desc"></div>
-        <div class="desc"></div>
-        <div class="desc"></div>
+        </section>
       </div>
+      <div class="desc">
+        <h2>test2</h2>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry"s standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.
+        </p>
+      </div>
+      <div class="desc">
+        <img src="images/cueb.jpg" alt="CUEB" />
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry’s standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.
+        </p>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry’s standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.
+        </p>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry’s standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.
+        </p>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry’s standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.
+        </p>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry’s standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+          scrambled it to make a type specimen book. It has survived not only
+          five centuries, but also the leap into electronic typesetting,
+          remaining essentially unchanged. It was popularised in the 1960s with
+          the release of Letraset sheets containing Lorem Ipsum passages, and
+          more recently with desktop publishing software like Aldus PageMaker
+          including versions of Lorem Ipsum.
+        </p>
+      </div>
+      <div class="desc"></div>
+      <div class="desc"></div>
+      <div class="desc"></div>
     </div>
   </body>
   <script type="text/javascript">
