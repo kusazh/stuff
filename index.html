@@ -172,43 +172,43 @@
         <div class="circle"></div>
       </div>
       <div class="checkboxes">
-        <input type="checkbox" id="1" onclick="show(this)" />
-        <label for="1">
+        <input type="checkbox" id="so-so" onclick="show(this)" />
+        <label for="so-so">
           <div class="item">
             <h2>So-so</h2>
             <p>2023</p>
           </div>
         </label>
-        <input type="checkbox" id="2" onclick="show(this)" />
-        <label for="2">
+        <input type="checkbox" id="chloe" onclick="show(this)" />
+        <label for="chloe">
           <div class="item">
             <h2>Chloe</h2>
             <p>2021</p>
           </div>
         </label>
-        <input type="checkbox" id="3" onclick="show(this)" />
-        <label for="3">
+        <input type="checkbox" id="kusa" onclick="show(this)" />
+        <label for="kusa">
           <div class="item">
             <h2>Kusa</h2>
             <p>2020</p>
           </div>
         </label>
-        <input type="checkbox" id="4" onclick="show(this)" />
-        <label for="4">
+        <input type="checkbox" id="encore" onclick="show(this)" />
+        <label for="encore">
           <div class="item">
             <h2>Encore</h2>
             <p>2017</p>
           </div>
         </label>
-        <input type="checkbox" id="5" onclick="show(this)" />
-        <label for="5">
+        <input type="checkbox" id="capsule" onclick="show(this)" />
+        <label for="capsule">
           <div class="item">
             <h2>Capsule</h2>
             <p>2016</p>
           </div>
         </label>
-        <input type="checkbox" id="6" onclick="show(this)" />
-        <label for="6">
+        <input type="checkbox" id="receipto" onclick="show(this)" />
+        <label for="receipto">
           <div class="item">
             <h2>Receipto:</h2>
             <p>2016</p>
@@ -335,31 +335,40 @@
       <div class="desc"></div>
       <div class="desc"></div>
     </div>
-  </body>
-  <script type="text/javascript">
-    function show(e) {
-      const parent = e.parentElement;
-      const index = parseInt(e.id);
-      const main = document.getElementById("main");
-      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-
-      window.scrollTo(0, 0);
-
-      for (let i = 0; i < main.children.length; i++) {
-        if (i === index - 1) {
-          main.children[i].style.display = "block";
-          checkboxes[i].checked = true;
-          checkboxes[i].nextElementSibling.scrollIntoView({
-            behavior: "smooth",
-            block: "nearest",
-            inline: "start",
-          });
-        } else {
-          main.children[i].style.display = "none";
-          checkboxes[i].style.cssText = "";
-          checkboxes[i].checked = false;
+    <script type="text/javascript">
+      const hash = window.location.hash;
+      if (hash) {
+        const e = document.getElementById(hash.slice(1));
+        if (e) {
+          show(e);
         }
       }
-    }
-  </script>
+
+      function show(e) {
+        const parent = e.parentElement;
+        const main = document.getElementById("main");
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        const index = Array.from(checkboxes).indexOf(e);
+
+        window.scrollTo(0, 0);
+        window.location.hash = e.id;
+
+        for (let i = 0; i < main.children.length; i++) {
+          if (i === index) {
+            main.children[i].style.display = "block";
+            checkboxes[i].checked = true;
+            checkboxes[i].nextElementSibling.scrollIntoView({
+              behavior: "smooth",
+              block: "nearest",
+              inline: "start",
+            });
+          } else {
+            main.children[i].style.display = "none";
+            checkboxes[i].style.cssText = "";
+            checkboxes[i].checked = false;
+          }
+        }
+      }
+    </script>
+  </body>
 </html>
