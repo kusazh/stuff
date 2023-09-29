@@ -47,6 +47,10 @@
         text-decoration: underline;
       }
 
+      video {
+        border: 0.1px solid lightgray;
+      }
+
       .sidebar {
         position: fixed;
         margin-left: 0.5rem;
@@ -220,25 +224,48 @@
         <section>
           <p>
             <i>So-so</i> (<span class="cjk" lang="ja">草々</span>) is a Chinese
-            poetry game that can be run on Nintendo® Game Boy™. Each game map is
-            a poem.
+            poetry game for Nintendo® Game Boy™. Each game map is a poem.
           </p>
           <p>
             It was developed using
             <a href="https://www.gbstudio.dev" target="_blank">GB Studio</a>
-            engine. Utilizing its built-in web export feature, it can also be
+            engine. Utilizing its built-in web export feature, the game can also
+            be
             <a href="https://kus.ai/so-so/" target="_blank"
               >played in a browser</a
             >.
           </p>
           <p>
-            The game and the web page use a 8x8 bitmap font,
+            The game and the web page use an 8x8 bitmap font,
             <a href="https://github.com/ItMarki/MisekiBitmap" target="_blank"
               >MisekiBitmap</a
-            >, ensuring that the size of each Chinese character precisely
-            aligned with one tile. With this correspondence, events could be
-            placed on words, triggering scene transitions when player move
-            onto them, creating a gameplay mechanic reminiscent of “hyperlink”.
+            >, ensuring that the size of each Chinese character aligns precisely
+            with one tile on the screen. This alignment allows events to be
+            placed on specific words, triggering scene transitions when player
+            move onto them, creating a gameplay mechanic reminiscent of
+            “hyperlink”.
+          </p>
+        </section>
+        <section>
+          <video autoplay loop playsinline width="340">
+            <source
+              src="images/so-so-gameplay.mp4"
+              alt="So-so Gameplay"
+              type="video/mp4"
+            />
+          </video>
+        </section>
+        <section>
+          <p>
+            Each poem is generated as an image using a Python script and then
+            imported into the game engine as a scene. To manage the relations
+            (interactable keywords) between different levels (poems), the game
+            development utilizes Apple®’s new whiteboard app,
+            <a
+              href="https://www.apple.com/newsroom/2022/12/apple-launches-freeform-a-powerful-new-app-designed-for-creative-collaboration/"
+              target="_blank"
+              >Freeform</a
+            >.
           </p>
         </section>
         <section>
@@ -246,15 +273,7 @@
         </section>
         <section>
           <p>
-            It uses Apple®’s new whiteboard app,
-            <a
-              href="https://www.apple.com/newsroom/2022/12/apple-launches-freeform-a-powerful-new-app-designed-for-creative-collaboration/"
-              target="_blank"
-              >Freeform</a
-            >, to manage the relations (interactable keywords) between levels
-            (poems). Each poem was generated as an image using a Python™ script
-            and then imported into the game engine as a scene. The script and GB
-            Studio project files are open-source and
+            Both the script and GB Studio project files are open-source and
             <a href="https://github.com/kusazh/so-so/" target="_blank"
               >hosted on GitHub</a
             >.
