@@ -79,7 +79,7 @@
 
       .main {
         position: absolute;
-        margin: 1rem 1rem 1rem max(13rem, 25vw);
+        margin: 1.5rem 1rem 1rem max(13rem, 25vw);
         max-width: 54rem;
         line-height: 1.25;
       }
@@ -115,29 +115,10 @@
       @media screen and (max-width: 580px) {
         .sidebar {
           margin: 0;
-          background: linear-gradient(
-            to bottom,
-            rgb(99.608% 99.608% 99.608%) 0%,
-            rgb(99.612% 99.612% 99.612% / 0.9951963201008076) 6.25%,
-            rgb(99.623% 99.623% 99.623% / 0.9809698831278217) 12.5%,
-            rgb(99.641% 99.641% 99.641% / 0.9578674030756363) 18.75%,
-            rgb(99.665% 99.665% 99.665% / 0.9267766952966369) 25%,
-            rgb(99.695% 99.695% 99.695% / 0.8888925582549005) 31.25%,
-            rgb(99.729% 99.729% 99.729% / 0.8456708580912724) 37.5%,
-            rgb(99.766% 99.766% 99.766% / 0.7987725805040321) 43.75%,
-            rgb(99.804% 99.804% 99.804% / 0.75) 50%,
-            rgb(99.842% 99.842% 99.842% / 0.701227419495968) 56.25%,
-            rgb(99.879% 99.879% 99.879% / 0.6543291419087276) 62.5%,
-            rgb(99.913% 99.913% 99.913% / 0.6111074417450995) 68.75%,
-            rgb(99.943% 99.943% 99.943% / 0.5732233047033631) 75%,
-            rgb(99.967% 99.967% 99.967% / 0.5421325969243637) 81.25%,
-            rgb(99.985% 99.985% 99.985% / 0.5190301168721783) 87.5%,
-            rgb(99.996% 99.996% 99.996% / 0.5048036798991924) 93.75%,
-            rgb(100% 100% 100% / 0.5) 100%
-          );
+          background: rgba(255, 255, 255, 0.73);
           width: 100%;
-          backdrop-filter: blur(10px);
-          -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: saturate(1.8) blur(20px);
+          -webkit-backdrop-filter: saturate(1.8) blur(20px);
         }
 
         .logo {
@@ -245,39 +226,35 @@
           <p>
             It was developed using
             <a href="https://www.gbstudio.dev" target="_blank">GB Studio</a>
-            engine, managed using Git for project management, and
-            <a
-              href="https://www.apple.com/newsroom/2022/12/apple-launches-freeform-a-powerful-new-app-designed-for-creative-collaboration/"
-              target="_blank"
-              >Freeform</a
-            >
-            for game flow management, and generated the required bitmap text
-            assets using Python. Utilizing GB Studio’s built-in web export
-            feature, it can also be
+            engine. Utilizing its built-in web export feature, it can also be
             <a href="https://kus.ai/so-so/" target="_blank"
               >played in a browser</a
             >.
           </p>
           <p>
-            The game and the web page used the 8x8 bitmap font,
+            The game and the web page use a 8x8 bitmap font,
             <a href="https://github.com/ItMarki/MisekiBitmap" target="_blank"
               >MisekiBitmap</a
-            >, ensuring that the size of each Chinese character conveniently
+            >, ensuring that the size of each Chinese character precisely
             aligned with one tile. With this correspondence, events could be
-            placed on characters, triggering scene transitions when player move
+            placed on words, triggering scene transitions when player move
             onto them, creating a gameplay mechanic reminiscent of “hyperlink”.
           </p>
         </section>
         <section>
-          <img loading="lazy" src="images/freeform.png" alt="Freeform"/>
+          <img loading="lazy" src="images/freeform.png" alt="Freeform" />
         </section>
         <section>
           <p>
-            Apple’s new whiteboard app, Freeform, was used to manage the
-            relations (interactable keywords) between levels (poems). Each poem
-            was generated as a game map using a Python script and then imported
-            into the GB Studio project. The script and project files are
-            open-source and
+            It uses Apple®’s new whiteboard app,
+            <a
+              href="https://www.apple.com/newsroom/2022/12/apple-launches-freeform-a-powerful-new-app-designed-for-creative-collaboration/"
+              target="_blank"
+              >Freeform</a
+            >, to manage the relations (interactable keywords) between levels
+            (poems). Each poem was generated as an image using a Python™ script
+            and then imported into the game engine as a scene. The script and GB
+            Studio project files are open-source and
             <a href="https://github.com/kusazh/so-so/" target="_blank"
               >hosted on GitHub</a
             >.
