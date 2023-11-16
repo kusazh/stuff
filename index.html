@@ -47,6 +47,10 @@
         text-decoration: underline;
       }
 
+      video {
+        border: 0.1px solid lightgray;
+      }
+
       .sidebar {
         position: fixed;
         margin-left: 0.5rem;
@@ -79,7 +83,7 @@
 
       .main {
         position: absolute;
-        margin: 1rem 1rem 1rem max(13rem, 25vw);
+        margin: 1.5rem 1rem 1rem max(13rem, 25vw);
         max-width: 54rem;
         line-height: 1.25;
       }
@@ -115,29 +119,10 @@
       @media screen and (max-width: 580px) {
         .sidebar {
           margin: 0;
-          background: linear-gradient(
-            to bottom,
-            rgb(99.608% 99.608% 99.608%) 0%,
-            rgb(99.612% 99.612% 99.612% / 0.9951963201008076) 6.25%,
-            rgb(99.623% 99.623% 99.623% / 0.9809698831278217) 12.5%,
-            rgb(99.641% 99.641% 99.641% / 0.9578674030756363) 18.75%,
-            rgb(99.665% 99.665% 99.665% / 0.9267766952966369) 25%,
-            rgb(99.695% 99.695% 99.695% / 0.8888925582549005) 31.25%,
-            rgb(99.729% 99.729% 99.729% / 0.8456708580912724) 37.5%,
-            rgb(99.766% 99.766% 99.766% / 0.7987725805040321) 43.75%,
-            rgb(99.804% 99.804% 99.804% / 0.75) 50%,
-            rgb(99.842% 99.842% 99.842% / 0.701227419495968) 56.25%,
-            rgb(99.879% 99.879% 99.879% / 0.6543291419087276) 62.5%,
-            rgb(99.913% 99.913% 99.913% / 0.6111074417450995) 68.75%,
-            rgb(99.943% 99.943% 99.943% / 0.5732233047033631) 75%,
-            rgb(99.967% 99.967% 99.967% / 0.5421325969243637) 81.25%,
-            rgb(99.985% 99.985% 99.985% / 0.5190301168721783) 87.5%,
-            rgb(99.996% 99.996% 99.996% / 0.5048036798991924) 93.75%,
-            rgb(100% 100% 100% / 0.5) 100%
-          );
+          background: rgba(255, 255, 255, 0.73);
           width: 100%;
-          backdrop-filter: blur(10px);
-          -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: saturate(1.8) blur(20px);
+          -webkit-backdrop-filter: saturate(1.8) blur(20px);
         }
 
         .logo {
@@ -187,43 +172,43 @@
         <div class="circle"></div>
       </div>
       <div class="checkboxes">
-        <input type="checkbox" id="1" onclick="show(this)" />
-        <label for="1">
+        <input type="checkbox" id="so-so" onclick="show(this)" />
+        <label for="so-so">
           <div class="item">
             <h2>So-so</h2>
             <p>2023</p>
           </div>
         </label>
-        <input type="checkbox" id="2" onclick="show(this)" />
-        <label for="2">
+        <input type="checkbox" id="chloe" onclick="show(this)" />
+        <label for="chloe">
           <div class="item">
             <h2>Chloe</h2>
             <p>2021</p>
           </div>
         </label>
-        <input type="checkbox" id="3" onclick="show(this)" />
-        <label for="3">
+        <input type="checkbox" id="kusa" onclick="show(this)" />
+        <label for="kusa">
           <div class="item">
             <h2>Kusa</h2>
             <p>2020</p>
           </div>
         </label>
-        <input type="checkbox" id="4" onclick="show(this)" />
-        <label for="4">
+        <input type="checkbox" id="encore" onclick="show(this)" />
+        <label for="encore">
           <div class="item">
             <h2>Encore</h2>
             <p>2017</p>
           </div>
         </label>
-        <input type="checkbox" id="5" onclick="show(this)" />
-        <label for="5">
+        <input type="checkbox" id="capsule" onclick="show(this)" />
+        <label for="capsule">
           <div class="item">
             <h2>Capsule</h2>
             <p>2016</p>
           </div>
         </label>
-        <input type="checkbox" id="6" onclick="show(this)" />
-        <label for="6">
+        <input type="checkbox" id="receipto" onclick="show(this)" />
+        <label for="receipto">
           <div class="item">
             <h2>Receipto:</h2>
             <p>2016</p>
@@ -239,45 +224,56 @@
         <section>
           <p>
             <i>So-so</i> (<span class="cjk" lang="ja">草々</span>) is a Chinese
-            poetry game that can be run on Nintendo® Game Boy™. Each game map is
-            a poem.
+            poetry game for Nintendo® Game Boy™. Each game map is a poem.
           </p>
           <p>
             It was developed using
             <a href="https://www.gbstudio.dev" target="_blank">GB Studio</a>
-            engine, managed using Git for project management, and
-            <a
-              href="https://www.apple.com/newsroom/2022/12/apple-launches-freeform-a-powerful-new-app-designed-for-creative-collaboration/"
-              target="_blank"
-              >Freeform</a
-            >
-            for game flow management, and generated the required bitmap text
-            assets using Python. Utilizing GB Studio’s built-in web export
-            feature, it can also be
+            engine. Utilizing its built-in web export feature, the game can also
+            be
             <a href="https://kus.ai/so-so/" target="_blank"
               >played in a browser</a
             >.
           </p>
           <p>
-            The game and the web page used the 8x8 bitmap font,
+            The game and the web page use an 8x8 bitmap font,
             <a href="https://github.com/ItMarki/MisekiBitmap" target="_blank"
               >MisekiBitmap</a
-            >, ensuring that the size of each Chinese character conveniently
-            aligned with one tile. With this correspondence, events could be
-            placed on characters, triggering scene transitions when player move
-            onto them, creating a gameplay mechanic reminiscent of “hyperlink”.
+            >, ensuring that the size of each Chinese character aligns precisely
+            with one tile on the screen. This alignment allows events to be
+            placed on specific words, triggering scene transitions when player
+            move onto them, creating a gameplay mechanic reminiscent of
+            “hyperlink”.
           </p>
         </section>
         <section>
-          <img loading="lazy" src="images/freeform.png" alt="Freeform"/>
+          <video autoplay loop playsinline width="340">
+            <source
+              src="images/so-so-gameplay.mp4"
+              alt="So-so Gameplay"
+              type="video/mp4"
+            />
+          </video>
         </section>
         <section>
           <p>
-            Apple’s new whiteboard app, Freeform, was used to manage the
-            relations (interactable keywords) between levels (poems). Each poem
-            was generated as a game map using a Python script and then imported
-            into the GB Studio project. The script and project files are
-            open-source and
+            Each poem is generated as an image using a Python script and then
+            imported into the game engine as a scene. To manage the relations
+            (interactable keywords) between different levels (poems), the game
+            development utilizes Apple®’s new whiteboard app,
+            <a
+              href="https://www.apple.com/newsroom/2022/12/apple-launches-freeform-a-powerful-new-app-designed-for-creative-collaboration/"
+              target="_blank"
+              >Freeform</a
+            >.
+          </p>
+        </section>
+        <section>
+          <img loading="lazy" src="images/freeform.png" alt="Freeform" />
+        </section>
+        <section>
+          <p>
+            Both the script and GB Studio project files are open-source and
             <a href="https://github.com/kusazh/so-so/" target="_blank"
               >hosted on GitHub</a
             >.
@@ -339,31 +335,40 @@
       <div class="desc"></div>
       <div class="desc"></div>
     </div>
-  </body>
-  <script type="text/javascript">
-    function show(e) {
-      const parent = e.parentElement;
-      const index = parseInt(e.id);
-      const main = document.getElementById("main");
-      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-
-      window.scrollTo(0, 0);
-
-      for (let i = 0; i < main.children.length; i++) {
-        if (i === index - 1) {
-          main.children[i].style.display = "block";
-          checkboxes[i].checked = true;
-          checkboxes[i].nextElementSibling.scrollIntoView({
-            behavior: "smooth",
-            block: "nearest",
-            inline: "start",
-          });
-        } else {
-          main.children[i].style.display = "none";
-          checkboxes[i].style.cssText = "";
-          checkboxes[i].checked = false;
+    <script type="text/javascript">
+      const hash = window.location.hash;
+      if (hash) {
+        const e = document.getElementById(hash.slice(1));
+        if (e) {
+          show(e);
         }
       }
-    }
-  </script>
+
+      function show(e) {
+        const parent = e.parentElement;
+        const main = document.getElementById("main");
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        const index = Array.from(checkboxes).indexOf(e);
+
+        window.scrollTo(0, 0);
+        window.location.hash = e.id;
+
+        for (let i = 0; i < main.children.length; i++) {
+          if (i === index) {
+            main.children[i].style.display = "block";
+            checkboxes[i].checked = true;
+            checkboxes[i].nextElementSibling.scrollIntoView({
+              behavior: "smooth",
+              block: "nearest",
+              inline: "start",
+            });
+          } else {
+            main.children[i].style.display = "none";
+            checkboxes[i].style.cssText = "";
+            checkboxes[i].checked = false;
+          }
+        }
+      }
+    </script>
+  </body>
 </html>
